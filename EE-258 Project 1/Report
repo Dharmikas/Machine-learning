@@ -1,0 +1,69 @@
+Data: 
+
+The MNIST dataset is one of the most well studied datasets in the computer vision and machine learning literature. In many cases, 
+it’s a benchmark and a standard to which machine learning algorithms are ranked.
+
+We have 784 features and 70000 samples in X which is input and 1 column feature for Y which is output label. Using Scikit-learn 
+library we have reshaped the data to 28 X 28 pixels and using array lists we can access digits and display them. We have divided 
+the data into 2 parts for training and test data with 60000 samples in training and 10000 samples in test data. It is a black 
+and white image without noise.
+
+Methodology-
+
+Linear Classifier – It is another name for binary classifier which means that it is or it is not. We can identify one digit from 
+the rest and likewise using multiclass classifiers we can differentiate between many classes.
+
+K-nearest neighbor classifier – KNN is useful for both classification and regression. In KNN classification the output is a class 
+membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common 
+among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the 
+class of that single nearest neighbor. In k-NN regression, the output is the property value for the object. This value is the 
+average of the values of its k nearest neighbors.
+
+RBF - A radial basis function network is an artificial neural network that uses radial basis functions as activation functions. 
+The output of the network is a linear combination of radial basis functions of the inputs and neuron parameters. Radial basis 
+function networks have many uses, including function approximation, time series prediction, classification, and system control.
+
+One-hidden layer fully connected multilayer neural network – This is a supervised type of learning algorithm and uses back-propagation
+for training. Each node in neural network uses a non-linear activation function. In this there is only one layer between input and 
+output layer.
+
+Two-hidden layer fully connected multilayer neural network – This is same as one-hidden layer just the difference is that now there 
+are two layers between input and output layer.
+
+Decision Trees (DTs) - are a supervised learning algorithm that can learn complex decision boundaries for handling both classiﬁcation 
+and regression problems. The algorithm works by constructing a tree from the training data in which interior nodes correspond to one 
+of the input features and the leaf nodes contain a prediction of the output value or category. Each interior node also contains a 
+cutoﬀ value, and in a binary DT like in this project where classification of normal and abnormal (malicious) packets have implemented, 
+a left and a right subtree.
+
+Random Forests - is a technique for reducing DT test error due to overﬁtting. Instead of training a single DT on the entire set of 
+features, in this project instead training an ensemble of n trees, each considering only a random subset of m of the features. 
+In making a prediction for a test example, the n predictions from each tree are generated and then output the ﬁnal classiﬁcation 
+as the mode of these predictions.
+
+Support Vector Machine (SVM) - performs regression and classification tasks by constructing nonlinear decision boundaries. Because
+of the nature of the feature space in which these boundaries are found, Support Vector Machines can exhibit a large degree of 
+flexibility in handling classification and regression tasks of varied complexities.
+
+
+
+Sr No.	Name	          Accuracy	Precision,      recall	Run Time	    F1 Score	Error
+1	      Linear	          96.64%    (Best)	6%,       9%	  300 msec	    7%	    Around 90.5%
+
+2	      KNN	              97.68%    (For k = 3)	97%,  97%	  70 Minutes	  97%	      -
+
+3	      RBF	              98.32%	    -	                    30 minutes		-
+
+4	  1 Hidden Layer MLP	   99.7%	    -	                    3 secs for     -	      0.0105
+                                                            every 20 
+                                                            iterations	
+
+5	  2 Hidden Layer MLP	   100%	      -	                    4 secs for     -	      2.1752e-04
+                                                            every 20 
+                                                            iterations
+
+6	  Decision Tree          9.96%	                    -	    5 mins	97%	-
+
+7	  Random Forest          97.03%	            96%           3 mins	      96%	      -
+
+8	      RBM	                  -	    96%              98%	  1.5 min	      96%	      -
